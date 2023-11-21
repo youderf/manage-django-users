@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap 5 -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href={% static 'css/style.css' %} />
+   <title>Document</title>
+</head>
+<div>
+  <!--  Header -->
+<div class="container-fluid p-0 ">
+    <div class="header">
+    <div style="text-align: right; font-size: medium;">
+        {% block login %}
+
+        {% endblock %}
+     </div>
+    Title Of  Your Blog Here !
+</div>
+
+
+             <!-- End Header -->  
+
+ <!--  Navbar -->
+<!-- https://getbootstrap.com/docs/5.0/components/navbar/  -->   
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="#"></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="#">Home</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">About Us</a>
+           </li>
+           
+                   <li class="nav-item">
+             <a class="nav-link" href="#">Archives</a>
+           </li>
+                   <li class="nav-item">
+             <a class="nav-link" href="#">Courses</a>
+           </li>
+                   <li class="nav-item">
+             <a class="nav-link" href="#">Projects</a>
+           </li>
+                           <li class="nav-item">
+             <a class="nav-link" href="#">News</a>
+           </li>
+           
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Formations
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <li><a class="dropdown-item" href="#">Web Developpement</a></li>
+               <li><a class="dropdown-item" href="#">Mobile Developpement</a></li>
+               <li><hr class="dropdown-divider"></li>
+               <li><a class="dropdown-item" href="#">Desktop Developpement</a></li>
+               <li><a class="dropdown-item" href="#">Data Sciences</a></li>
+               
+             </ul>
+           </li>
+                       <li class="nav-item">
+             <a class="nav-link" href="#">Contact Us</a>
+           </li>
+         </ul>
+         <form class="d-flex">
+           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success" type="submit">Search</button>
+         </form>
+       </div>
+     </div> 
+   </nav>
+                                              <!-- End Navbar -->
+   
+
+
+
+<!--<div class = "container" > -->
+<div class ="row" style = "margin-top: 10px; padding:5px;">
+
+                  <!-- 4.1)  Sidenav avec 3 colonnes -->
+<div class="col-3">
+<!-- Mettez ici le contenu de votre sidenav: des liens, des boutons de commandes...  -->
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem; margin-left: 5px;">
+    <div class="card-header">Main Menu</div>
+    <div class="card-body" style="background-color: white; color:black;">
+      
+      <p class="card-text">
+
+          <p><a class="btn btn-secondary" href="/" style="width:100%;">Home</a></p>
+          <p> <a class="btn btn-secondary" href="/blog" style="width:100%;" >Blog</a></p>
+        <p> <a class="btn btn-secondary" href="/student/list" style="width:100%;" >Student</a></p>
+        <p> <a class="btn btn-secondary" href="#" style="width:100%;" >All Posts</a></p>
+        <p> <a class="btn btn-secondary" href="#" style="width:100%;" >my Posts</a></p>
+        <p> <a class="btn btn-secondary" href="/blog/new" style="width:100%;" >Add New Post</a></p>
+
+
+        </p>
+    </div>
+  </div>
+
+
+</div>
+                            <!-- End Sidenav-->
+
+
+                     <!-- BODY avec 7 colonnes-->
+<div class="col-9">
+
+<div class="card" style="width:100%; margin:5px;">
+
+  <div class="card-body">
+    <p class="card-text">
+        {% block content %}
+	Youre content here <br/>
+    Youre content here <br/>
+    Youre content here <br/>
+    Youre content here <br/>
+    Youre content here <br/>
+    Youre content here <br/>
+
+        {% endblock %}
+
+    </p>
+
+  </div>
+</div>
+</div>
+                                     <!-- End Body-->
+                                    </div></div>
+
+</div>
+<br />
+  <!-- FOOTER START -->
+
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Sign up for our newsletter</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example29" class="form-control" />
+                <label class="form-label" for="form5Example29">Email address</label>
+              </div>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Subscribe
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- END OF FOOTER -->                       
+
+
+</body>
+</html>
